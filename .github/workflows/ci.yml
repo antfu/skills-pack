@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  ci:
+    uses: sxzz/workflows/.github/workflows/unit-test.yml@main
+    with:
+      build: ''
+      os-matrix: '"ubuntu-latest"'
+      node-versions: '24'

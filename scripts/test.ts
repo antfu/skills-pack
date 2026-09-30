@@ -6,7 +6,7 @@ import { join } from 'node:path'
 import process from 'node:process'
 
 const readme = await readFile('README.md', 'utf8')
-const expected = [...readme.matchAll(/^\| [^|]+ \| \[([^\]]+)\]/gm)].map(m => m[1])
+const expected = [...readme.matchAll(/^\| \[([^\]]+)\]\(/gm)].map(m => m[1])
 if (!expected.length)
   throw new Error('No skills found in README table')
 

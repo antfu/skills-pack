@@ -68,10 +68,6 @@ export const sources: Source[] = [
     category: 'Vue & Nuxt',
     skills: [
       'nuxt-modules',
-      'nuxt-content',
-      'nuxt-i18n',
-      'nuxt-seo',
-      'comark',
     ],
   },
   {

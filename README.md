@@ -87,10 +87,6 @@ pnpx skills update
 | [vue-debug-guides](https://github.com/vuejs-ai/skills/blob/HEAD/skills/vue-debug-guides/SKILL.md) | Vue 3 debugging and error handling for runtime errors, warnings, async failures, and SSR/hydration issues. | [vuejs-ai/skills](https://github.com/vuejs-ai/skills) |
 | [create-adaptable-composable](https://github.com/vuejs-ai/skills/blob/HEAD/skills/create-adaptable-composable/SKILL.md) | Create a library-grade Vue composable that accepts maybe-reactive inputs (MaybeRef / MaybeRefOrGetter) so callers can pass a plain value, ref, or getter. | [vuejs-ai/skills](https://github.com/vuejs-ai/skills) |
 | [nuxt-modules](https://github.com/onmax/nuxt-skills/blob/HEAD/skills/nuxt-modules/SKILL.md) | Use when creating Nuxt modules: (1) Published npm modules (@nuxtjs/, nuxt-), (2) Local project modules (modules/ directory), (3) Runtime extensions (components, composables, plugins), (4) Server extensions (API routes, middleware), (5) Releasing/publishing modules to npm, (6) Setting up CI/CD workflows for modules. | [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) |
-| [nuxt-content](https://github.com/onmax/nuxt-skills/blob/HEAD/skills/nuxt-content/SKILL.md) | Build typed, content-driven Nuxt applications with @nuxt/content. | [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) |
-| [nuxt-i18n](https://github.com/onmax/nuxt-skills/blob/HEAD/skills/nuxt-i18n/SKILL.md) | Internationalize Nuxt applications with @nuxtjs/i18n. | [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) |
-| [nuxt-seo](https://github.com/onmax/nuxt-skills/blob/HEAD/skills/nuxt-seo/SKILL.md) | Nuxt SEO meta-module with robots, sitemap, og-image, schema-org. | [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) |
-| [comark](https://github.com/onmax/nuxt-skills/blob/HEAD/skills/comark/SKILL.md) | Comark (Components in Markdown) parser: syntax, AST, Vue/React/Svelte/Angular renderers, plugins, and LLM streaming with auto-close. | [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) |
 
 ### Design
 

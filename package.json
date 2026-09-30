@@ -86,11 +86,7 @@
     {
       "source": "onmax/nuxt-skills",
       "skills": [
-        "nuxt-modules",
-        "nuxt-content",
-        "nuxt-i18n",
-        "nuxt-seo",
-        "comark"
+        "nuxt-modules"
       ]
     },
     "anthropics/skills/skills/frontend-design",

@@ -66,6 +66,13 @@
     "cursor/plugins/pstack/skills/unslop",
     "ayghri/i-have-adhd",
     {
+      "source": "antfu/skills",
+      "skills": [
+        "antfu",
+        "antfu-create-pr"
+      ]
+    },
+    {
       "source": "vuejs-ai/skills",
       "skills": [
         "vue-best-practices",
@@ -83,14 +90,6 @@
         "nuxt-content",
         "nuxt-i18n",
         "nuxt-seo",
-        "nuxt-studio",
-        "nuxt-ui",
-        "nuxthub",
-        "nuxt-better-auth",
-        "nuxt-users",
-        "reka-ui",
-        "regle",
-        "arkenv",
         "comark"
       ]
     },

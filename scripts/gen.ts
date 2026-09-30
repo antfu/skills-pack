@@ -53,23 +53,32 @@ function summary(text: string) {
 }
 
 function parseRows(table: string): Row[] {
-  return table
-    .split('\n')
-    .filter(line => line.startsWith('| ') && !line.startsWith('| ---') && !line.startsWith('| Category'))
-    .map((line) => {
-      const [category, skill, description, source] = line
-        .slice(2, -2)
-        .split(/(?<!\\) \| /)
-      return { category, skill, description, source }
-    })
+  let heading = ''
+  const rows: Row[] = []
+  for (const line of table.split('\n')) {
+    if (line.startsWith('### ')) {
+      heading = line.slice(4).trim()
+      continue
+    }
+    if (!line.startsWith('| ') || line.startsWith('| ---') || line.startsWith('| Skill') || line.startsWith('| Category'))
+      continue
+    const cells = line.slice(2, -2).split(/(?<!\\) \| /)
+    // Older READMEs had a leading Category column; the per-category tables drop it.
+    const [category, skill, description, source] = cells.length === 4 ? cells : [heading, ...cells]
+    rows.push({ category, skill, description, source })
+  }
+  return rows
 }
 
 function renderTable(rows: Row[]) {
-  return [
-    '| Category | Skill | Description | Source |',
-    '| --- | --- | --- | --- |',
-    ...rows.map(r => `| ${r.category} | ${r.skill} | ${r.description} | ${r.source} |`),
-  ].join('\n')
+  const categories = [...new Set(rows.map(r => r.category))]
+  return categories.map(category => [
+    `### ${category}`,
+    '',
+    '| Skill | Description | Source |',
+    '| --- | --- | --- |',
+    ...rows.filter(r => r.category === category).map(r => `| ${r.skill} | ${r.description} | ${r.source} |`),
+  ].join('\n')).join('\n\n')
 }
 
 async function github<T>(path: string): Promise<T> {

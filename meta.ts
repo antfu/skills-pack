@@ -44,6 +44,14 @@ export const sources: Source[] = [
     category: 'Writing',
   },
   {
+    source: 'antfu/skills',
+    category: 'Workflow',
+    skills: [
+      'antfu',
+      'antfu-create-pr',
+    ],
+  },
+  {
     source: 'vuejs-ai/skills',
     category: 'Vue & Nuxt',
     skills: [
@@ -63,14 +71,6 @@ export const sources: Source[] = [
       'nuxt-content',
       'nuxt-i18n',
       'nuxt-seo',
-      'nuxt-studio',
-      'nuxt-ui',
-      'nuxthub',
-      'nuxt-better-auth',
-      'nuxt-users',
-      'reka-ui',
-      'regle',
-      'arkenv',
       'comark',
     ],
   },

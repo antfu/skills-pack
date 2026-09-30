@@ -51,18 +51,13 @@
         "grill-me",
         "grilling",
         "handoff",
-        "wait-what",
         "to-questionnaire",
         "writing-for-agents",
         "teach",
         "code-review",
         "codebase-design",
-        "diagnosing-bugs",
-        "prototype",
         "research",
-        "resolving-merge-conflicts",
-        "tdd",
-        "wizard"
+        "tdd"
       ]
     },
     "shadcn/improve",

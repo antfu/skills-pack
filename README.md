@@ -4,20 +4,34 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-Anthony's curated agent skills, one `npm i` away.
+Anthony's curated agent skills.
 
-A hand-picked set of [agent skills](https://agentskills.io) from across the ecosystem, declared in one npm package so a project gets all of them with a single install. Powered by [skills-npm](https://github.com/antfu/skills-npm).
+A hand-picked set of [agent skills](https://agentskills.io) from across the ecosystem, declared in one npm package so a project gets all of them with a single install. 
+
+Powered by [skills-npm](https://github.com/antfu/skills-npm).
 
 ## Setup
 
 Install [skills-npm](https://github.com/antfu/skills-npm) and this pack as dev dependencies, then let skills-npm wire itself into your `prepare` script:
 
 ```bash
-npm i -D skills-npm @antfu/skills
-npx skills-npm setup
+pnpm i -D skills-npm @antfu/skills
+pnpx skills-npm setup
 ```
 
-`setup` adds `"prepare": "skills-npm"` to your `package.json` and runs the first sync. From then on every `npm install` keeps the skills in sync.
+`setup` adds `"prepare": "skills-npm"` to your `package.json` and runs the first sync. From then on every `npm install` keeps the skills in sync. It would looks like this
+
+```json
+{
+  "scripts": {
+    "prepare": "skills-npm"
+  },
+  "devDependencies": {
+    "skills-npm": "^4.0.0",
+    "@antfu/skills": "^1.0.0"
+  }
+}
+```
 
 What you get:
 
@@ -28,7 +42,7 @@ What you get:
 The pack tracks each upstream's default branch. To pull in the latest upstream changes without waiting for a new pack release:
 
 ```bash
-npx skills update
+pnpx skills update
 ```
 
 ## Skills
@@ -40,18 +54,13 @@ npx skills update
 | Workflow | [grill-me](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/grill-me/SKILL.md) | A relentless interview to sharpen a plan or design. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [grilling](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/grilling/SKILL.md) | Grill the user relentlessly about a plan, decision, or idea. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [handoff](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/handoff/SKILL.md) | Compact the current conversation into a handoff document for another agent to pick up. | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| Workflow | [wait-what](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/wait-what/SKILL.md) | Stop. That last message did not land: re-pitch it. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [to-questionnaire](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/to-questionnaire/SKILL.md) | Turn a decision you can't fully answer into a questionnaire for someone else to fill in. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [writing-for-agents](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/writing-for-agents/SKILL.md) | Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [teach](https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/teach/SKILL.md) | Teach the user a new skill or concept, within this workspace. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [code-review](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/code-review/SKILL.md) | Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [codebase-design](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/codebase-design/SKILL.md) | Shared vocabulary for designing deep modules. | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| Workflow | [diagnosing-bugs](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/diagnosing-bugs/SKILL.md) | Diagnosis loop for hard bugs and performance regressions. | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| Workflow | [prototype](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/prototype/SKILL.md) | Build a throwaway prototype to answer a design question. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [research](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/research/SKILL.md) | Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| Workflow | [resolving-merge-conflicts](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/resolving-merge-conflicts/SKILL.md) | Use when you need to resolve an in-progress git merge/rebase conflict. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [tdd](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/tdd/SKILL.md) | Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests. | [mattpocock/skills](https://github.com/mattpocock/skills) |
-| Workflow | [wizard](https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/wizard/SKILL.md) | Generate an interactive bash wizard that walks a human through steps only they can perform. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | Workflow | [improve](https://github.com/shadcn/improve/blob/HEAD/skills/improve/SKILL.md) | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. | [shadcn/improve](https://github.com/shadcn/improve) |
 | Workflow | [dry-refactoring](https://github.com/kucherenko/jscpd/blob/HEAD/skills/dry-refactoring/SKILL.md) | Guided workflow to eliminate copy-paste duplication detected by jscpd. | [kucherenko/jscpd](https://github.com/kucherenko/jscpd/tree/HEAD/skills/dry-refactoring) |
 | Writing | [simple-english](https://github.com/AminBlg/SimpleEnglish/blob/HEAD/skills/simple-english/SKILL.md) | Write or rewrite text in plain, layman-readable English in the spirit of ASD-STE100 Simplified Technical English: short sentences, active voice, simple tenses, one word one meaning, condition before command, every technical term defined at first use, no AI slop. | [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish) |

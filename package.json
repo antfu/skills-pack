@@ -1,0 +1,119 @@
+{
+  "name": "@antfu/skills",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@12.6.0",
+  "description": "Anthony's curated agent skills, one `npm i` away",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/antfu/skills-pack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antfu/skills-pack.git"
+  },
+  "bugs": "https://github.com/antfu/skills-pack/issues",
+  "keywords": [
+    "agent",
+    "skills",
+    "skills-npm",
+    "ai",
+    "claude",
+    "opencode",
+    "cursor"
+  ],
+  "files": [
+    "skills"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "gen": "tsx scripts/gen.ts",
+    "lint": "pnpm run gen --check && eslint",
+    "release": "bumpp",
+    "test": "tsx scripts/test.ts",
+    "typecheck": "tsc",
+    "prepare": "git config core.hooksPath .githooks && simple-git-hooks"
+  },
+  "scripts-info": {
+    "gen": "Sync package.json `skills` field and README table from meta.ts",
+    "lint": "Check generated files are in sync and code style",
+    "release": "Bump version and publish a release",
+    "test": "Install the pack into a temp project and verify every skill lands",
+    "typecheck": "Check types",
+    "prepare": "Set up git hooks"
+  },
+  "skills": [
+    {
+      "source": "mattpocock/skills",
+      "skills": [
+        "grill-me",
+        "grilling",
+        "handoff",
+        "to-questionnaire",
+        "writing-for-agents",
+        "teach",
+        "code-review",
+        "codebase-design",
+        "research",
+        "tdd"
+      ]
+    },
+    "shadcn/improve",
+    "kucherenko/jscpd/skills/dry-refactoring",
+    "AminBlg/SimpleEnglish",
+    "cursor/plugins/pstack/skills/unslop",
+    "ayghri/i-have-adhd",
+    {
+      "source": "antfu/skills",
+      "skills": [
+        "antfu",
+        "antfu-create-pr"
+      ]
+    },
+    {
+      "source": "vuejs-ai/skills",
+      "skills": [
+        "vue-best-practices",
+        "vue-router-best-practices",
+        "vue-pinia-best-practices",
+        "vue-testing-best-practices",
+        "vue-debug-guides",
+        "create-adaptable-composable"
+      ]
+    },
+    {
+      "source": "onmax/nuxt-skills",
+      "skills": [
+        "nuxt-modules",
+        "nuxt-content",
+        "nuxt-i18n",
+        "nuxt-seo",
+        "comark"
+      ]
+    },
+    "anthropics/skills/skills/frontend-design",
+    "vercel-labs/agent-browser"
+  ],
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:cli",
+    "@types/node": "catalog:types",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:cli",
+    "eslint-plugin-slop": "catalog:cli",
+    "eslint-plugin-sonarjs": "catalog:cli",
+    "nano-staged": "catalog:cli",
+    "simple-git-hooks": "catalog:cli",
+    "skills-npm": "catalog:cli",
+    "tsx": "catalog:cli",
+    "typescript": "catalog:cli",
+    "yaml": "catalog:cli"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx nano-staged"
+  },
+  "nano-staged": {
+    "*": "eslint --fix"
+  }
+}

@@ -67,6 +67,7 @@ pnpx skills update
 | [dry-refactoring](https://github.com/kucherenko/jscpd/blob/HEAD/skills/dry-refactoring/SKILL.md) | Guided workflow to eliminate copy-paste duplication detected by jscpd. | [kucherenko/jscpd](https://github.com/kucherenko/jscpd/tree/HEAD/skills/dry-refactoring) |
 | [antfu](https://github.com/antfu/skills/blob/HEAD/skills/antfu/SKILL.md) | Anthony Fu's opinionated tooling and conventions for JavaScript/TypeScript projects. | [antfu/skills](https://github.com/antfu/skills) |
 | [antfu-create-pr](https://github.com/antfu/skills/blob/HEAD/skills/antfu-create-pr/SKILL.md) | Create a reviewable GitHub pull request from the current branch with a Conventional Commits title, a concise evidence-based body, and before/after screenshots for UI changes. | [antfu/skills](https://github.com/antfu/skills) |
+| [antfu-issue-triage](https://github.com/antfu/skills/blob/HEAD/skills/antfu-issue-triage/SKILL.md) | Triage open issues and PRs of the current GitHub repo - find already-fixed, duplicate, and spam items, suggest labels, gauge demand from reactions and comments, then present a table of proposed actions and comments for confirmation before touching anything. | [antfu/skills](https://github.com/antfu/skills) |
 
 ### Writing
 

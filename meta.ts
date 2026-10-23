@@ -49,6 +49,7 @@ export const sources: Source[] = [
     skills: [
       'antfu',
       'antfu-create-pr',
+      'antfu-issue-triage',
     ],
   },
   {

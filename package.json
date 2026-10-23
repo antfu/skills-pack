@@ -2,7 +2,7 @@
   "name": "@antfu/skills",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.15.0",
   "description": "Anthony's curated agent skills, one `npm i` away",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "license": "MIT",
@@ -69,7 +69,8 @@
       "source": "antfu/skills",
       "skills": [
         "antfu",
-        "antfu-create-pr"
+        "antfu-create-pr",
+        "antfu-issue-triage"
       ]
     },
     {

@@ -8,35 +8,37 @@ Anthony's curated agent skills.
 
 A hand-picked set of [agent skills](https://agentskills.io) from across the ecosystem, declared in one npm package so a project gets all of them with a single install. 
 
-Powered by [skills-npm](https://github.com/antfu/skills-npm).
+Powered by the [`skills` CLI](https://github.com/vercel-labs/skills) and [skills-npm](https://github.com/antfu/skills-npm).
 
 ## Setup
 
-Install [skills-npm](https://github.com/antfu/skills-npm) and this pack as dev dependencies, then let skills-npm wire itself into your `prepare` script:
+Install the [`skills` CLI](https://github.com/vercel-labs/skills) and this pack as dev dependencies, then hook `skills experimental_sync` into your `prepare` script:
 
 ```bash
-pnpm i -D skills-npm @antfu/skills
-pnpx skills-npm setup
+pnpm i -D skills @antfu/skills
 ```
-
-`setup` adds `"prepare": "skills-npm"` to your `package.json` and runs the first sync. From then on every `npm install` keeps the skills in sync. It would looks like this
 
 ```json
 {
   "scripts": {
-    "prepare": "skills-npm"
+    "prepare": "skills experimental_sync -y"
   },
   "devDependencies": {
-    "skills-npm": "^4.0.0",
+    "skills": "^1.7.4",
     "@antfu/skills": "^1.0.0"
   }
 }
 ```
 
+Then run `pnpm i` (or `pnpx skills experimental_sync -y`) for the first sync. From then on every install keeps the skills in sync.
+
+> [!NOTE]
+> `experimental_sync` is the successor of `skills-npm`, which is being merged into the `skills` CLI. Already using `skills-npm`? Run `npx skills-npm migrate` to switch over.
+
 What you get:
 
-- Every skill listed below is installed into `.agents/skills/<name>` and linked into the skill directories of the agents detected on your machine (Claude Code, Cursor, OpenCode, Codex, ...). Pass `--agents claude-code,cursor` to choose explicitly.
-- `skills-npm-lock.json` and `skills-lock.json` record what came from where. Commit them.
+- Every skill listed below is installed into `.agents/skills/<name>` and linked into the skill directories of the agents detected on your machine (Claude Code, Cursor, OpenCode, Codex, ...). Pass `-a claude-code cursor` to choose explicitly.
+- `skills-lock.json` records what came from where. Commit it.
 - Removing `@antfu/skills` from your dependencies removes the skills on the next sync.
 
 The pack tracks each upstream's default branch. To pull in the latest upstream changes without waiting for a new pack release:
@@ -68,6 +70,8 @@ pnpx skills update
 | [antfu](https://github.com/antfu/skills/blob/HEAD/skills/antfu/SKILL.md) | Anthony Fu's opinionated tooling and conventions for JavaScript/TypeScript projects. | [antfu/skills](https://github.com/antfu/skills) |
 | [antfu-create-pr](https://github.com/antfu/skills/blob/HEAD/skills/antfu-create-pr/SKILL.md) | Create a reviewable GitHub pull request from the current branch with a Conventional Commits title, a concise evidence-based body, and before/after screenshots for UI changes. | [antfu/skills](https://github.com/antfu/skills) |
 | [antfu-issue-triage](https://github.com/antfu/skills/blob/HEAD/skills/antfu-issue-triage/SKILL.md) | Triage open issues and PRs of the current GitHub repo - find already-fixed, duplicate, and spam items, suggest labels, gauge demand from reactions and comments, then present a table of proposed actions and comments for confirmation before touching anything. | [antfu/skills](https://github.com/antfu/skills) |
+| [antfu-simplify](https://github.com/antfu/skills/blob/HEAD/skills/antfu-simplify/SKILL.md) | Simplify the changes of the current PR or working tree with an ablation study - remove each piece of the diff and keep only what is proven needed - so the result has just-right abstraction, minimal clean code, and stays robust and universal. | [antfu/skills](https://github.com/antfu/skills) |
+| [antfu-query](https://github.com/antfu/skills/blob/HEAD/skills/antfu-query/SKILL.md) | Interview the user relentlessly about a plan, decision, or idea until reaching a shared understanding, using the agent's interactive question tool (not plain text). | [antfu/skills](https://github.com/antfu/skills) |
 
 ### Writing
 

@@ -1,6 +1,10 @@
 ignoreWorkspaceRootCheck: true
 catalogMode: prefer
+
 minimumReleaseAgeExcludePrune: true
+minimumReleaseAgeExclude:
+  - eslint@10.14.0
+
 trustPolicy: no-downgrade
 
 update:
@@ -15,16 +19,16 @@ allowBuilds:
 
 catalogs:
   cli:
-    '@antfu/eslint-config': ^9.5.1
+    '@antfu/eslint-config': ^10.0.0
     bumpp: ^12.3.0
-    eslint: ^10.13.0
+    eslint: ^10.14.0
     eslint-plugin-slop: ^0.1.3
     eslint-plugin-sonarjs: ^4.2.2
     nano-staged: ^1.0.2
     simple-git-hooks: ^2.14.0
-    skills-npm: ^4.1.0
+    skills: ^1.7.4
     tsx: ^4.23.15
     typescript: ^6.0.3
     yaml: ^2.9.1
   types:
-    '@types/node': ^26.6.5
+    '@types/node': ^26.6.6

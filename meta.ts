@@ -50,6 +50,8 @@ export const sources: Source[] = [
       'antfu',
       'antfu-create-pr',
       'antfu-issue-triage',
+      'antfu-simplify',
+      'antfu-query',
     ],
   },
   {

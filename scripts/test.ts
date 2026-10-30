@@ -6,7 +6,9 @@ import { join } from 'node:path'
 import process from 'node:process'
 
 const readme = await readFile('README.md', 'utf8')
-const expected = [...readme.matchAll(/^\| \[([^\]]+)\]\(/gm)].map(m => m[1])
+const expected = [
+  ...readme.matchAll(/^\| \[([^\]]+)\]\(/gm),
+].map(m => m[1])
 if (!expected.length)
   throw new Error('No skills found in README table')
 
@@ -18,11 +20,11 @@ function run(cmd: string, cwd = dir) {
 
 run(`pnpm pack --pack-destination ${dir}`, process.cwd())
 const [tarball] = (await readdir(dir)).filter(f => f.endsWith('.tgz'))
-const { version } = JSON.parse(await readFile('node_modules/skills-npm/package.json', 'utf8'))
+const { version } = JSON.parse(await readFile('node_modules/skills/package.json', 'utf8'))
 
 await writeFile(join(dir, 'package.json'), JSON.stringify({ name: 'consumer', private: true }))
-run(`npm i -D ./${tarball} skills-npm@${version}`)
-run('npx skills-npm --agents opencode --yes')
+run(`npm i -D ./${tarball} skills@${version}`)
+run('npx skills experimental_sync -a opencode -y')
 
 const missing = expected.filter(name => !existsSync(join(dir, '.agents/skills', name, 'SKILL.md')))
 if (missing.length) {
